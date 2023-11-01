@@ -15,7 +15,7 @@ public record DadosAtualizarMovimentacao(
         Movimentacoes movimentacoes,
 
         @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-        LocalDateTime dahorainicio,
+        LocalDateTime datahorainicio,
 
         @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
         LocalDateTime datahorafim

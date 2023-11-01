@@ -14,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("movimentacao")
+@CrossOrigin("*")
 public class MovimentacaoControle {
 
     @Autowired

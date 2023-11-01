@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("container")
+@CrossOrigin("*")
 public class ContainerControle {
 
     @Autowired
@@ -43,7 +44,7 @@ public class ContainerControle {
         return ResponseEntity.ok(repository.findByNome(nome));
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<Page<DadosListagemContainer>> buscarTodos(@PageableDefault(size = 10, sort = {"nome"})Pageable paginacao){
 
         var page = repository.findAll(paginacao).map(DadosListagemContainer::new);

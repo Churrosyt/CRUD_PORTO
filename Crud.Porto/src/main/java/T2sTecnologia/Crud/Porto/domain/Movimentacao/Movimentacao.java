@@ -3,6 +3,7 @@ package T2sTecnologia.Crud.Porto.domain.Movimentacao;
 import T2sTecnologia.Crud.Porto.domain.Container.Container;
 import T2sTecnologia.Crud.Porto.domain.Enums.Movimentacoes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+
 public class Movimentacao {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,13 +31,14 @@ public class Movimentacao {
     private LocalDateTime datahorainicio;
     private LocalDateTime datahorafim;
 
+   
     @ManyToOne
 
     private Container container;
 
     public Movimentacao(DadosCadastroMovimentacao dados) {
         this.movimentacoes = dados.movimentacoes();
-        this. datahorainicio = dados.datahorainicio();
+        this.datahorainicio = dados.datahorainicio();
         this.datahorafim = dados.datahorafim();
         this.container = dados.container();
     }
@@ -44,8 +47,8 @@ public class Movimentacao {
         if(dados.movimentacoes() != null){
             this.movimentacoes = dados.movimentacoes();
         }
-        if (dados.dahorainicio() != null){
-            this.datahorainicio = dados.dahorainicio();
+        if (dados.datahorainicio() != null){
+            this.datahorainicio = dados.datahorainicio();
         }
 
         if (dados.datahorafim() != null){
